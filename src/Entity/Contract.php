@@ -29,6 +29,9 @@ class Contract
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $sendAt = null;
 
+    #[ORM\Column]
+    private ?bool $isReviewed = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Contract
     public function setSendAt(\DateTimeInterface $sendAt): self
     {
         $this->sendAt = $sendAt;
+
+        return $this;
+    }
+
+    public function isIsReviewed(): ?bool
+    {
+        return $this->isReviewed;
+    }
+
+    public function setIsReviewed(bool $isReviewed): self
+    {
+        $this->isReviewed = $isReviewed;
 
         return $this;
     }
