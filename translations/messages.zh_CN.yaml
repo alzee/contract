@@ -2,3 +2,9 @@ ID: 序号
 Dashboard: 数据统计
 Contract: 合同管理
 No: 合同编号
+Is Reviewed: 是否评审
+Address: 合同履行地
+Industry: 注册行业类型
+Reg At: 合同登记时间
+Send At: 委托日期
+Name: 项目名称
