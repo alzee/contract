@@ -11,6 +11,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use App\Entity\Contract;
 use App\Entity\Feedback;
 use App\Entity\Pay;
+use App\Entity\Invoice;
+use App\Entity\User;
+use App\Entity\Company;
+use App\Entity\Industry;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -46,10 +50,21 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Contract', 'fas fa-building', Contract::class);
-        yield MenuItem::linkToCrud('Feedback', 'fas fa-building', Feedback::class);
-        yield MenuItem::linkToCrud('Pay', 'fas fa-building', Pay::class);
+        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-chart-simple');
+        yield MenuItem::linkToCrud('Contract', 'fas fa-file', Contract::class);
+        yield MenuItem::linkToCrud('Feedback', 'fas fa-file-export', Feedback::class);
+        yield MenuItem::linkToCrud('Pay', 'fas fa-money-bill', Pay::class);
+        yield MenuItem::linkToCrud('Invoice', 'fas fa-file-invoice', Invoice::class);
+        yield MenuItem::subMenu('Data', 'fa fa-receipt')->setSubItems([
+            MenuItem::linkToCrud('Invoice', 'fas fa-file', Invoice::class),
+        ]);
+        yield MenuItem::subMenu('Settings', 'fa fa-gear')->setSubItems([
+            MenuItem::linkToCrud('User', 'fas fa-users', User::class),
+            MenuItem::linkToCrud('Company', 'fas fa-building', Company::class),
+            MenuItem::linkToCrud('Industry', 'fas fa-building', Industry::class),
+            MenuItem::linkToCrud('', 'fas fa-building', Industry::class),
+            MenuItem::linkToCrud('', 'fas fa-building', Industry::class),
+        ]);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 }

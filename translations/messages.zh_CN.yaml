@@ -4,7 +4,7 @@ Contract: 合同管理
 No: 合同编号
 Is Reviewed: 是否评审
 Address: 合同履行地
-Industry: 注册行业类型
+contract.Industry: 注册行业类型
 Reg At: 合同登记时间
 Send At: 委托日期
 Name: 项目名称
@@ -17,3 +17,16 @@ Method: 收款方式
 Amount: 金额
 Total: 合同总金额
 Status: 完成情况
+Invoice: 发票情况
+Item: 项目
+Payment: 付款状态
+Type: 专票/普票
+Payer: 欠款人
+Note: 备注
+User: 用户管理
+Settings: 系统管理
+Company: 公司管理
+Data: 统计报表
+Contact: 联系人
+Phone: 电话
+Industry: 行业管理
