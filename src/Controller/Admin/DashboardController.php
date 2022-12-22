@@ -15,6 +15,8 @@ use App\Entity\Invoice;
 use App\Entity\User;
 use App\Entity\Company;
 use App\Entity\Industry;
+use App\Entity\Workflow;
+use App\Entity\Report;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -58,12 +60,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::subMenu('Data', 'fa fa-receipt')->setSubItems([
             MenuItem::linkToCrud('Invoice', 'fas fa-file', Invoice::class),
         ]);
+        yield MenuItem::linkToCrud('Report', 'fas fa-file-invoice', Report::class);
         yield MenuItem::subMenu('Settings', 'fa fa-gear')->setSubItems([
             MenuItem::linkToCrud('User', 'fas fa-users', User::class),
             MenuItem::linkToCrud('Company', 'fas fa-building', Company::class),
             MenuItem::linkToCrud('Industry', 'fas fa-building', Industry::class),
-            MenuItem::linkToCrud('', 'fas fa-building', Industry::class),
-            MenuItem::linkToCrud('', 'fas fa-building', Industry::class),
+            MenuItem::linkToCrud('Workflow', 'fas fa-building', Workflow::class),
         ]);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
